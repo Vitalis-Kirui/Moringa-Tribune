@@ -11,6 +11,9 @@ class Editor(models.Model):
     class Meta:
         ordering = ['first_name']
 
+    def save_editor(self):
+        self.save()
+
 class tags(models.Model):
     name = models.CharField(max_length=30)
 
@@ -23,3 +26,5 @@ class Article(models.Model):
     editor = models.ForeignKey(Editor, on_delete=models.CASCADE)
     tags = models.ManyToManyField(tags)
     pub_date = models.DateTimeField(auto_now_add=True)
+
+    default = ''
