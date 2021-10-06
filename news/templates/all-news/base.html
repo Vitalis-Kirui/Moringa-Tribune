@@ -1,4 +1,6 @@
 {% load bootstrap3 %}
+{% load static%}
+
 <!DOCTYPE html>
 <html>
 
@@ -17,11 +19,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Charm&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="{% static 'css/basenews.css' %}">
+
     {% endblock %}
 
 </head>
 
 <body>
+
+    {% include "navbar.html" %}
     
     {% block content %} 
     <h1 class='text-center' style=" font-family: 'Charm', cursive;">News for {{date|date:"l d-F Y"}}</h1>
